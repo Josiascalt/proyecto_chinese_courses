@@ -33,10 +33,18 @@
     justify-content: start;
 }
 
+.flex-end {
+    justify-content: end;
+}
+
 .full-viewport {
     position: relative;
     height: 90vh;
     width: 100vw;
+}
+
+.icon-wrapper img {
+    height: 50%;
 }
 
 input, input::placeholder {
@@ -49,7 +57,7 @@ input:focus {
 
 #top-bar {
     width: 100vw;
-    max-height: 10rem;
+    max-height: 80px;
     min-height: 2.5rem;
     height: 10vh;
     padding: 0 5%;
@@ -69,31 +77,6 @@ input:focus {
     width: 100%;
 }
 
-.headers-wrapper {
-    width: 50%;
-    height: 100%;
-    margin: 0 5%;
-}
-
-.headers-wrapper > .divisor-wrapper {
-    width: calc(100% / 5);
-}
-
-.divisor-wrapper > span {
-    text-align: center;
-    border-color: transparent;
-}
-
-.divisor-wrapper > span:hover {
-    transition-duration: 500ms;
-    transition-property: color, border-color;
-    cursor: pointer;
-
-    color: var(--header-color);
-    padding: 0.5rem 0 0.3rem;
-    border-bottom: var(--header-color) 0.2rem solid;
-}
-
 #top-bar > .input-wrapper {
     transition-duration: 250ms;
     transition-property: width;
@@ -107,9 +90,10 @@ input:focus {
 
 #top-bar > .input-wrapper:hover {
     transition-duration: 700ms;
-    transition-property: width;
+    transition-property: min-width, width;
 
-    width: 20%;
+    width: 30%;
+    max-width: 15rem;
     color: var(--text-color-light);
     background-color: var(--header-color);
     cursor: pointer;
@@ -135,7 +119,34 @@ input:focus {
     min-width: 5rem;
 }
 
-.icon-wrapper img {
-    height: 50%;
+#top-bar > .headers-wrapper {
+    min-width: 50%;
+    width: 50%;
+    height: 100%;
+    margin: 0 5%;
+}
+
+#top-bar > .headers-wrapper > .divisor-wrapper {
+    width: calc(100% / 5);
+}
+
+#top-bar > .headers-wrapper > .divisor-wrapper > span {
+    text-align: center;
+    border-color: transparent;
+}
+
+#top-bar > .headers-wrapper > .divisor-wrapper > span:hover {
+    transition-duration: 500ms;
+    transition-property: color, border-color;
+    cursor: pointer;
+
+    color: var(--header-color);
+    padding: 0.5rem 0 0.3rem;
+    border-bottom: var(--header-color) 0.2rem solid;
+}
+
+#top-bar > .divisor-wrapper.flex-end {
+    height: 100%;
+    width: calc(100% - 80px - 65% - 5rem);
 }
 
