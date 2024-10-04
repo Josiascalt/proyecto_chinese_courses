@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root {
+    font-size: 15px;
+
+    /*    color variables    */
+    --text-color-dark: black;
+    --text-color-light: white;
+    --header-color: rgb(204,0,0);
+    --primary-color: rgb(231,249,255);
+    --secondary-color: rgb(124,124,124);
+}
+
+.flex-center, .flex-beg {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-beg {
+    justify-content: start;
+}
+
+.full-viewport {
+    position: relative;
+    height: 90vh;
+    width: 100vw;
+}
+
+input, input::placeholder {
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+#top-bar {
+    width: 100vw;
+    max-height: 10rem;
+    min-height: 2.5rem;
+    height: 10vh;
+    padding: 0 5%;
+    background-color: white;
+    box-shadow: 0 0.1rem 1rem 0.1rem var(--secondary-color);
+    position: fixed;
+    z-index: 100;
+}
+
+.logo-wrapper {
+    height: 100%;
+    aspect-ratio: 1;
+    margin-right: 5%;
+}
+
+.logo-wrapper > img {
+    width: 100%;
+}
+
+.headers-wrapper {
+    width: 50%;
+    height: 100%;
+    margin: 0 5%;
+}
+
+.headers-wrapper > .divisor-wrapper {
+    width: calc(100% / 5);
+}
+
+.divisor-wrapper > span {
+    text-align: center;
+    border-color: transparent;
+}
+
+.divisor-wrapper > span:hover {
+    transition-duration: 500ms;
+    transition-property: color, border-color;
+    cursor: pointer;
+
+    color: var(--header-color);
+    padding: 0.5rem 0 0.3rem;
+    border-bottom: var(--header-color) 0.2rem solid;
+}
+
+#top-bar > .input-wrapper {
+    transition-duration: 250ms;
+    transition-property: width;
+
+    width: 5rem;
+    height: 50%;
+    border-radius: 2rem;
+    background-color: gainsboro;
+    overflow: hidden;
+}
+
+#top-bar > .input-wrapper:hover {
+    transition-duration: 700ms;
+    transition-property: width;
+
+    width: 20%;
+    color: var(--text-color-light);
+    background-color: var(--header-color);
+    cursor: pointer;
+}
+
+#top-bar > .input-wrapper input {
+    height: 100%;
+    width: 70%;
+    border-radius: 2rem;
+    background-color: inherit;
+    color: inherit;
+}
+
+#top-bar > .input-wrapper input::placeholder {
+
+    color: inherit;
+    opacity: 0.8;
+}
+
+#top-bar > .input-wrapper > .icon-wrapper {
+    height: 100%;
+    width: 30%;
+    min-width: 5rem;
+}
+
+.icon-wrapper img {
+    height: 50%;
+}
+
