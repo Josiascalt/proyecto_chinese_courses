@@ -13,14 +13,22 @@
     font-size: 15px;
 
     /*    color variables    */
-    --text-color-dark: black;
-    --text-color-light: white;
+    --primary-text-color: black;
+    --secondary-text-color: white;
     --header-color: rgb(204,0,0);
     --primary-color: rgb(231,249,255);
     --secondary-color: rgb(124,124,124);
 }
 
-.flex-center, .flex-beg {
+input, input::placeholder {
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+.flex-center, .flex-beg, .flex-end {
     display: flex;
     align-items: center;
 }
@@ -34,25 +42,50 @@
 }
 
 .flex-end {
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .full-viewport {
     position: relative;
+    padding: 0 5%;
     height: 90vh;
     width: 100vw;
+}
+
+.dark-glass-style {
+    position: absolute;
+
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .icon-wrapper img {
     height: 50%;
 }
 
-input, input::placeholder {
-    font-size: 1rem;
+.contact-button {
+    width: 7rem;
+    aspect-ratio: 3;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--secondary-text-color);
+    background-color: var(--header-color);
+    
 }
 
-input:focus {
-    outline: none;
+.language-button {
+    height: 100%;
+    margin: 0 2rem;
+
+}
+
+.language-button span:after {
+    content: '\2335';
+    color: #b50b3e;
+    margin-left: 0.5rem;
+
 }
 
 #top-bar {
@@ -70,10 +103,20 @@ input:focus {
 .logo-wrapper {
     height: 100%;
     aspect-ratio: 1;
-    margin-right: 5%;
 }
 
 .logo-wrapper > img {
+    width: 100%;
+}
+
+.slide-show {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.slide-show > img {
     width: 100%;
 }
 
@@ -83,6 +126,7 @@ input:focus {
 
     width: 5rem;
     height: 50%;
+    margin: 0 5%;
     border-radius: 2rem;
     background-color: gainsboro;
     overflow: hidden;
@@ -92,9 +136,8 @@ input:focus {
     transition-duration: 700ms;
     transition-property: min-width, width;
 
-    width: 30%;
-    max-width: 15rem;
-    color: var(--text-color-light);
+    width: 20rem;
+    color: var(--secondary-text-color);
     background-color: var(--header-color);
     cursor: pointer;
 }
@@ -108,7 +151,6 @@ input:focus {
 }
 
 #top-bar > .input-wrapper input::placeholder {
-
     color: inherit;
     opacity: 0.8;
 }
@@ -123,7 +165,7 @@ input:focus {
     min-width: 50%;
     width: 50%;
     height: 100%;
-    margin: 0 5%;
+    
 }
 
 #top-bar > .headers-wrapper > .divisor-wrapper {
@@ -147,6 +189,14 @@ input:focus {
 
 #top-bar > .divisor-wrapper.flex-end {
     height: 100%;
-    width: calc(100% - 80px - 65% - 5rem);
+    width: calc(100% - 80px - 60% - 5rem);
+}
+
+#top-bar > .language-button {
+    margin-left: 0;
+}
+
+#home {
+    padding: 0;
 }
 
